@@ -113,8 +113,6 @@ extension SearchViewController: UITableViewDataSource {
         cell.textLabel?.text = isSearchBarEmpty ? infoData[indexPath.row] : filteredData[indexPath.row]
         return cell
     }
-    
-    
 }
 
 extension SearchViewController: UITableViewDelegate {

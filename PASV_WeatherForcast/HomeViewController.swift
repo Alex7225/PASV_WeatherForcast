@@ -56,7 +56,4 @@ class HomeViewController: UIViewController {
         //present(searchVC, animated: true)
         navigationController?.pushViewController(searchVC, animated: true)
     }
-
-
 }
-
