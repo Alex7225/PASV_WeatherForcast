@@ -21,8 +21,6 @@ class SearchViewController: UIViewController {
     let searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         
-        
-        
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         return searchController
