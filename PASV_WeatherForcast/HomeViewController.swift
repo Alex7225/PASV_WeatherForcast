@@ -65,7 +65,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func searchAction() {
-        let searchVC = SearchViewController()
+        let viewModel = SearchViewModel()
+        let searchVC = SearchViewController(viewModel: viewModel)
         searchVC.delegate = self
         //searchVC.modalPresentationStyle = .fullScreen
         //present(searchVC, animated: true)
@@ -74,7 +75,7 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: SearchViewControllerDelegate {
-    func citySelectedByUser(city: String) {
-        nameOfCityLabel.text = city
+    func citySelectedByUser(model: SearchModel) {
+        nameOfCityLabel.text = model.city
     }
 }

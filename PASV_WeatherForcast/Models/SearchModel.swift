@@ -1,5 +1,5 @@
 //
-//  Untitled.swift
+//  SearchModel.swift
 //  PASV_WeatherForcast
 //
 //  Created by Oleksandr Hryhoruk on 25/09/2024.
