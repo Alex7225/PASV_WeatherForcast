@@ -17,7 +17,7 @@ class SearchViewModel {
     weak var delegate: SearchViewModelDelegate?
     
     // private let infoData = ["New York", "Toronto", "London", "Singapore", "Paris", "Tokyo", "Sydney"]
-    private let infoData: [SearchModel] = [SearchModel(city: "London", time: "9.41", description: "Rain", temperature: 18, highTemperature: 21, lowTemperature: 10),
+    private var infoData: [SearchModel] = [SearchModel(city: "London", time: "9.41", description: "Rain", temperature: 18, highTemperature: 21, lowTemperature: 10),
                                            SearchModel(city: "New York", time: "4.41", description: "Cloudy", temperature: 22, highTemperature: 25, lowTemperature: 18),
                                            SearchModel(city: "Toronto", time: "5.41", description: "Clear", temperature: 25, highTemperature: 28, lowTemperature: 17),
                                            SearchModel(city: "Singapore", time: "17.41", description: "Clear", temperature: 37, highTemperature: 41, lowTemperature: 32),
@@ -28,7 +28,9 @@ class SearchViewModel {
     private var filteredData: [SearchModel] = []
     
     func didLoad() {
+        //getSearchData()
         delegate?.dataLoaded()
+        saveSearchData(data: infoData)
     }
     
     func searchedData(data: String) {
@@ -42,4 +44,43 @@ class SearchViewModel {
         return filteredData.isEmpty ? infoData: filteredData
     }
     
+    func codingDataJSON() -> Data? {
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(infoData)
+            return data
+        } catch {
+            print("Error encoding data: \(error)")
+            return nil
+        }
+        
+    }
+    
+    func decodingDataJSON(data: Data?) -> [SearchModel]? {
+        guard let data = data else { return nil }
+        let decoder = JSONDecoder()
+        do {
+            let data = try decoder.decode([SearchModel].self, from: data)
+            return data
+        } catch {
+            print("Error decoding data: \(error)")
+            return nil
+        }
+    }
+    
+    func saveSearchData(data: [SearchModel]) {
+        let userDefaults = UserDefaults.standard
+        guard let encodedData = codingDataJSON() else { return }
+        userDefaults.set(encodedData, forKey: "searchData")
+        
+    }
+    
+    func getSearchData() {
+        let userDefaults = UserDefaults.standard
+        let userData = userDefaults.data(forKey: "searchData")
+        if let userDecodedData = decodingDataJSON(data: userData) {
+            print("Successfully decoded data:")
+            infoData = userDecodedData
+        }
+    }
 }

@@ -48,6 +48,7 @@ class SearchViewController: UIViewController {
     
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
+        self.viewModel.getSearchData()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -108,7 +109,11 @@ extension SearchViewController: UITableViewDelegate {
         let infoModel = viewModel.getInfoData()[indexPath.row]
         delegate?.citySelectedByUser(model: infoModel)
         print(infoModel.city)
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)  // Close current view and go back to previous
+        let viewControllerCity = CityViewController(model: infoModel)
+        viewControllerCity.view.backgroundColor = .systemTeal
+        //navigationController?.pushViewController(viewControllerCity, animated: true)  // Open next new view, full screen, from right to left
+        present(viewControllerCity, animated: true)  //  Open next new view, not full screen in top, from down to up. Slide down to close
         
     }
 }

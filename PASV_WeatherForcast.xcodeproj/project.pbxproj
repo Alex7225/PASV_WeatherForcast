@@ -19,6 +19,8 @@
 		F19B64B92C9A9F5F008436CD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F19B64B82C9A9F5F008436CD /* Base */; };
 		F19B64C12C9AA8CA008436CD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B64C02C9AA8CA008436CD /* MapViewController.swift */; };
 		F19B64C32C9AA8E9008436CD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19B64C22C9AA8E9008436CD /* SearchViewController.swift */; };
+		F1F7E1CF2CB39D93000A53D8 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F7E1CE2CB39D93000A53D8 /* CityViewController.swift */; };
+		F1F7E1D12CB66813000A53D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1F7E1D02CB66813000A53D8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F19B64BA2C9A9F5F008436CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F19B64C02C9AA8CA008436CD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F19B64C22C9AA8E9008436CD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F1F7E1CE2CB39D93000A53D8 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		F1F7E1D02CB66813000A53D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		F19B64A02C9A9F5E008436CD = {
 			isa = PBXGroup;
 			children = (
+				F1F7E1D02CB66813000A53D8 /* Assets.xcassets */,
 				F19B64AB2C9A9F5E008436CD /* PASV_WeatherForcast */,
 				F19B64AA2C9A9F5E008436CD /* Products */,
 			);
@@ -105,6 +110,7 @@
 				F19B64B72C9A9F5F008436CD /* LaunchScreen.storyboard */,
 				F19B64BA2C9A9F5F008436CD /* Info.plist */,
 				F19B64C02C9AA8CA008436CD /* MapViewController.swift */,
+				F1F7E1CE2CB39D93000A53D8 /* CityViewController.swift */,
 			);
 			path = PASV_WeatherForcast;
 			sourceTree = "<group>";
@@ -136,6 +142,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
@@ -169,6 +178,7 @@
 			files = (
 				F19B64B62C9A9F5F008436CD /* Assets.xcassets in Resources */,
 				F19B64B92C9A9F5F008436CD /* Base in Resources */,
+				F1F7E1D12CB66813000A53D8 /* Assets.xcassets in Resources */,
 				F19B64B42C9A9F5E008436CD /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F18098E02CA4DBCB005558C9 /* TableViewCells.swift in Sources */,
+				F1F7E1CF2CB39D93000A53D8 /* CityViewController.swift in Sources */,
 				F18098DB2CA23B4D005558C9 /* SearchViewModel.swift in Sources */,
 				F18098E22CA4DEB4005558C9 /* SearchModel.swift in Sources */,
 				F19B64C32C9AA8E9008436CD /* SearchViewController.swift in Sources */,
